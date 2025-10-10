@@ -1,4 +1,4 @@
-/* do{
+do{
     var nombre = prompt("Inserta tu nombre")
     var confirmación = confirm("Estás seguro que ese es tu nombre?");
     if (confirmación){
@@ -18,7 +18,7 @@ let cuentatras = setInterval(() => {
         document.write(`Cuenta atrás: ${contador} <br>`)
         --contador
     }
-}, 1000) */
+}, 1000)
 
 function abrirVentana(){
     let ventana = window.open("","demo","width=400, height=200")
