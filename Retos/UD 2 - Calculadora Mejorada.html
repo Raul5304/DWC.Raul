@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Mejorada</title>
+</head>
+<body>
+    <script>
+        var pedirNumero1 = parseInt(prompt("Inserta el primer número de la calculadora"));
+        var pedirNumero2 = parseInt(prompt("Inserta el segundo número de la calculadora"));
+        var contador = 0;
+
+        do{
+            var elegirOperacion = parseInt(prompt("Elige la operación que deseas hacer: 1: Suma, 2: Resta, 3: Multiplicación, 4: División, 5. Resto, 6. Salir"))
+            if (elegirOperacion == 1){
+                document.write(`El resultado de la suma es ${pedirNumero1 + pedirNumero2} <br>`)
+                contador++
+            }
+            else if (elegirOperacion == 2){
+                document.write(`El resultado de la resta es ${pedirNumero1 - pedirNumero2} <br>`)
+                contador++
+            }
+            else if (elegirOperacion == 3){
+                document.write(`El resultado de la multiplicación es ${pedirNumero1 * pedirNumero2} <br>`);
+                contador++
+            }
+            else if (elegirOperacion == 4){
+                if (pedirNumero2 == 0){
+                    document.write(`No se puede dividir entre 0 <br>`);
+                }
+                else{
+                    document.write(`El resultado de la división es ${pedirNumero1 / pedirNumero2} <br>`);
+                    contador++
+                }
+            }
+            else if (elegirOperacion == 5){
+                document.write(`El resto de la operación es ${pedirNumero1 % pedirNumero2} <br>`);
+                contador++
+            }
+        }while (elegirOperacion != 6)
+        
+        document.write(`Número de operaciones realizadas: ${contador} <br>`);
+    </script>
+</body>
+</html>
