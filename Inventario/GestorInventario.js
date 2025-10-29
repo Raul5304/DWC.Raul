@@ -22,7 +22,7 @@ function mostrarInventario(){
     if (inventario.length === 0){
         console.log("El inventario está vacio, añade algunos productos");
     }else{
-        console.table(inventario);
+        inventario.forEach(p => console.log(`${p.nombre.padEnd(10)} | ${String(p.precio).padStart(5)} | ${p.stock} unidades`));
     }
 };
 
@@ -44,6 +44,16 @@ function buscarProducto(){
     };
 };
 
+function filtrarProductos(){
+    let caros = inventario.filter(p => p.precio > 20);
+    caros.forEach(p => console.log(`${p.nombre.padEnd(10)} | ${String(p.precio).padStart(5)} | ${p.stock} unidades`));
+}
+
+function calcularMedia(){
+    let media = inventario.reduce((ac,p) => ac + p.precio, 0) / inventario.length;
+    console.log("La media de los precios es" + media.toFixed(2) + "€");
+}
+
 let opcion = "";
 while (opcion != "6"){
     opcion = prompt(`GESTOR DE INVENTARIO
@@ -56,17 +66,19 @@ while (opcion != "6"){
 
     switch(opcion){
         case "1": //Mostrar inventario
-            mostrarInventario();
+            mostrarInventario(inventario);
             break;
         case "2": // Agregar producto
-            agregarProducto();
+            agregarProducto(inventario);
             break;
         case "3": // Buscar producto
-            buscarProducto();
+            buscarProducto(inventario);
             break;
         case "4": // Filtar por precio
+            filtrarProductos(inventario);
             break;
         case "5": // Calcular media de precios
+            calcularMedia(inventario);
             break;
         case "6": // Salir
             console.log("Saliendo del programa...");
