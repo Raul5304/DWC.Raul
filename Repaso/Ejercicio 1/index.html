@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Compras</title>
+</head>
+<body>
+    <h1>Lista de Compras</h1>
+    <form>
+        <label for="producto">Introduce un producto</label>
+        <input type="text" id="producto" placeholder="Producto..." required><br><br>
+
+        <label for="cantidad">Introduce una cantidad</label>
+        <input type="text" id="cantidad" placeholder="1" required><br><br>
+        
+        <label for="precio">Introduce un precio por unidad</label>
+        <input type="text" id="precio" placeholder="0.50" required><br><br>
+
+        <button type="submit" id="enviar">Enviar</button>
+    </form><br><br>
+
+    <h1>Lista</h1>
+    <div id="lista">
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
